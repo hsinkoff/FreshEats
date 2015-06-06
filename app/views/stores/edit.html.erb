@@ -1,0 +1,15 @@
+<%= @store.name %>
+<%= simple_form_for @store do |f| %>
+	<%= f.input :address %>
+	<%= f.input :apples, as: :radio_buttons %>
+	<%= f.input :oranges, as: :radio_buttons %>
+	<%= f.input :bananas, as: :radio_buttons %>
+	<%= f.input :grapes, as: :radio_buttons %>
+	<%= f.input :other_fruits, as: :radio_buttons %>
+	<%= f.input :lettuce, as: :radio_buttons %>
+	<%= f.input :carrots, as: :radio_buttons %>
+	<%= f.input :onions, as: :radio_buttons %>
+	<%= f.input :potatoes, as: :radio_buttons %>
+	<%= f.input :other_vegetables, as: :radio_buttons %>
+	<%= f.submit 'Update' %>
+<% end %>

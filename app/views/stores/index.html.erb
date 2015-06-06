@@ -1,0 +1,8 @@
+<h1>stores index</h1>
+
+<%= @stores.inspect %>
+<% @stores.each do |store| %>
+	<%= link_to store.name, store_path(store) %>
+	<%= store.address %>
+<br/>
+<% end %>
