@@ -1,9 +1,17 @@
 <div class = "text-white text-center">
 	<% if user_signed_in? %>
-	<br/><br/><br/>
-		<h1><%= "Welcome back " %></h1>
+		<br/><br/><br/>
+		<h1><%= "Welcome Back!" %>
+			<br/>
+			<%= current_user.email %>
+		</h1>
 		<br/>
-		<h3><%= "Your current point total is: " %>
-		<%= current_user.usage %></h3>
+		<%= link_to root_path do %>
+	  	<%= image_tag 'logo.jpg' %>
+		<% end %>
+		<h3>
+			<%= "Your current point total is: " %>
+			<%= current_user.usage %>
+		</h3>
 	<% end %>
 </div>
