@@ -1,14 +1,21 @@
-<%= image_tag 'frontpage.jpg' %>
-<div class="clear">
-	<%= link_to 'Tag a place with fresh food', stores_path(a: "tag") %>
-	<%= link_to 'Find a place with fresh food', stores_path(a: "find") %>
-	<% if user_signed_in? %>
-		<%= link_to 'Sign-out', destroy_user_session_path, :method => :delete %>
-	<% else %>
-		<%= link_to 'Login', new_user_session_path %>
-		<%= link_to 'Sign-up', new_user_registration_path %>
-	<% end %>
-	<%if user_signed_in? %>
-		<%= link_to 'Profile', user_path(current_user) %>
-	<% end %>
+<div class="padding">
+	<div class="text-center text-white"
+		<%= link_to 'Tag a place', stores_path(a: "tag"), :class => 'heading' %>
+		<br/><br/>
+		<%= link_to 'Find a place', stores_path(a: "find"), :class => 'heading' %>
+		<br/>
+		<%= image_tag 'frontpage.jpg', :class => 'firstpage' %>
+		<br/>
+		<% if user_signed_in? %>
+			<%= link_to 'Sign-out', destroy_user_session_path, :method => :delete, :class => 'heading' %>
+		<% else %>
+			<%= link_to 'Login', new_user_session_path, :class => 'heading button' %>
+			<br/>
+			<%= link_to 'Sign-up', new_user_registration_path, :class => 'heading button' %>
+		<% end %>
+		<%if user_signed_in? %>
+			<br/>
+			<%= link_to 'Profile', user_path(current_user), :class => 'heading button' %>
+		<% end %>
+	</div>
 </div>
