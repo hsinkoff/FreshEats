@@ -5,7 +5,7 @@ class StoresController < ApplicationController
 			@stores = Store.all
 		elsif params[:a] == "find"
 			@stores = Store.all
-		#	@stores = Store.find_by(apples: true) 
+			#@stores = Store.where(apples: true) 
 		end
 	end
 
@@ -20,6 +20,7 @@ class StoresController < ApplicationController
 	def update
 		@store = Store.find(params[:id])
 		@store.update_attributes(store_params)
+		current_user.update_attributes(usage: current_user.usage + 1)
 		redirect_to root_path
 	end
 

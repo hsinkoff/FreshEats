@@ -1,3 +1,18 @@
-// Place all the styles related to the stores controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.firstpage {
+	background: url('frontpage.jpg') no-repeat center center fixed;
+	-webkit-background-size: 50%;
+	-moz-background-size: 50%;
+	-o-background-size: 50%;
+	background-size: 50%;
+	height: 100%;
+	width: 100;
+	}
+
+.heading {
+	color: white !important;
+}
+
+.heading:hover {
+	color: rgb(14, 204, 78) !important;
+	text-decoration: none;
+}

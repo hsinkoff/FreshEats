@@ -1,8 +1,11 @@
-<h1>stores index</h1>
-
-<%= @stores.inspect %>
-<% @stores.each do |store| %>
-	<%= link_to store.name, store_path(store) %>
-	<%= store.address %>
-<br/>
-<% end %>
+<div class="text-center text-white">
+	<h1>Neighborhood Stores</h1>
+	<br/>
+	<% if @stores != nil %>
+		<% @stores.each do |store| %>
+			<h4><%= link_to store.name, store_path(store), :class => 'heading' %></h4>
+		<% end %>
+	<% else %>
+		<%= "There are no stores that have been tagged as having fresh fruit and vegetables.  Please tag a store if you see fresh fruit or vegetables." %>
+	<% end %>
+</div>

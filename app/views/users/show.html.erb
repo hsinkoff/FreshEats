@@ -1,0 +1,9 @@
+<div class = "text-white text-center">
+	<% if user_signed_in? %>
+	<br/><br/><br/>
+		<h1><%= "Welcome back " %></h1>
+		<br/>
+		<h3><%= "Your current point total is: " %>
+		<%= current_user.usage %></h3>
+	<% end %>
+</div>

@@ -1,15 +1,26 @@
-<%= @store.name %>
-<%= simple_form_for @store do |f| %>
-	<%= f.input :address %>
-	<%= f.input :apples, as: :radio_buttons %>
-	<%= f.input :oranges, as: :radio_buttons %>
-	<%= f.input :bananas, as: :radio_buttons %>
-	<%= f.input :grapes, as: :radio_buttons %>
-	<%= f.input :other_fruits, as: :radio_buttons %>
-	<%= f.input :lettuce, as: :radio_buttons %>
-	<%= f.input :carrots, as: :radio_buttons %>
-	<%= f.input :onions, as: :radio_buttons %>
-	<%= f.input :potatoes, as: :radio_buttons %>
-	<%= f.input :other_vegetables, as: :radio_buttons %>
-	<%= f.submit 'Update' %>
-<% end %>
+<div class="text-center">
+	<div class="text-white">
+		<br/>
+		<h1><%= @store.name %></h1>
+		<br/>
+		<%= simple_form_for @store do |f| %>
+			<h3><%= "Fruits" %></h3>
+			<%= f.input :apples, as: :boolean %>
+			<%= f.input :oranges, as: :boolean %>
+			<%= f.input :bananas, as: :boolean %>
+			<%= f.input :grapes, as: :boolean %>
+			<%= f.input :other_fruits, as: :boolean %>
+			<%= f.input :no_fruits, as: :boolean %>
+			<br/>
+			<h3><%= "Vegetables" %></h3>
+			<%= f.input :lettuce, as: :boolean %>
+			<%= f.input :carrots, as: :boolean %>
+			<%= f.input :onions, as: :boolean %>
+			<%= f.input :potatoes, as: :boolean %>
+			<%= f.input :other_vegetables, as: :boolean %>
+			<%= f.input :no_vegetables, as: :boolean %>
+	</div>
+			<br/>
+			<%= f.submit 'Update' %>
+			<% end %>
+</div>

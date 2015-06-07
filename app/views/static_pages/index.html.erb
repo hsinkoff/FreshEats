@@ -1,3 +1,13 @@
-<h1>Welcome to GoFresh</h1>
-<%= link_to 'Tag a place with fresh food', stores_path(a: "tag") %>
-<%= link_to 'Find a place with fresh food', stores_path(a: "find") %>
+<div class = "firstpic">
+	<%= link_to 'Tag a place with fresh food', stores_path(a: "tag") %>
+	<%= link_to 'Find a place with fresh food', stores_path(a: "find") %>
+	<% if user_signed_in? %>
+		<%= link_to 'Sign-out', destroy_user_session_path, :method => :delete %>
+	<% else %>
+		<%= link_to 'Login', new_user_session_path %>
+		<%= link_to 'Sign-up', new_user_registration_path %>
+	<% end %>
+	<%if user_signed_in? %>
+		<%= link_to 'Profile', user_path(current_user) %>
+	<% end %>
+</div>
