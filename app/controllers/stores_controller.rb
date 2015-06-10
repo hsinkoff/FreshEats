@@ -5,8 +5,7 @@ class StoresController < ApplicationController
 		if params[:a] == "tag"
 			@stores = Store.all
 		elsif params[:a] == "find"
-			@stores = Store.all
-			#@stores = Store.where(apples: true) 
+			@stores = Store.where("apples = ? or oranges = ? or grapes = ? or bananas = ? or other_fruits = ? or carrots = ? or potatoes = ? or onions = ? or lettuce = ? or other_vegetables = ?", true, true, true, true, true, true, true, true, true, true)
 		end
 	end
 
