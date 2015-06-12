@@ -5,7 +5,9 @@
 <div class="text-center text-white">
 	<h1>Bronzeville Stores</h1>
 	<br/>
-	<div id="map-canvas"></div>
+	<div class="container-fluid">
+		<div id="map-canvas"></div>
+	</div>
 	<% if @stores != nil %>
 		<% @stores.each do |store| %>
 			<h4><%= link_to store.name, store_path(store), :class => 'heading' %></h4>
