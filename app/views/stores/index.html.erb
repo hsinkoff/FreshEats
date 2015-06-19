@@ -3,52 +3,52 @@
 <% end %>
 
 <div class="text-center text-white">
-	<h1>Bronzeville Stores</h1>
-	<br/>
-	<div class="container-fluid">
-		<div id="map-canvas"></div>
-	</div>
-	<% if @stores != nil %>
-		<% @stores.each do |store| %>
-			<h4><%= link_to store.name, store_path(store), :class => 'heading' %></h4>
-		<% end %>
-	<% else %>
-		<%= "There are no stores that have been tagged as having fresh fruit and vegetables.  Please tag a store if you see fresh fruit or vegetables." %>
-	<% end %>
+  <h1>Bronzeville Stores</h1>
+  <br/>
+  <div class="container-fluid">
+    <div id="map-canvas"></div>
+  </div>
+  <% if @stores != nil %>
+    <% @stores.each do |store| %>
+      <h4><%= link_to store.name, store_path(store), :class => 'heading' %></h4>
+    <% end %>
+  <% else %>
+    <%= "There are no stores that have been tagged as having fresh fruit and vegetables.  Please tag a store if you see fresh fruit or vegetables." %>
+  <% end %>
 </div>
 
 <div class="box">
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-	<script>
-	  function initialize() {
-	    var mapOptions = {
-	      zoom: 13,
-	      center: new google.maps.LatLng(41.82, -87.63)
-	    };
-    	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    	var markers = []
-    	var contentString = []
-    	var infoWindow = []
-			<% @stores.each_with_index do |store, i| %>
-				var myLatlng = new google.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>);
-    		markers[<%= i %>] = (new google.maps.Marker({
-      		position: myLatlng,
-      		map: map,
-      		title: 'Hello World'
-    		}));
-    		contentString[<%= i %>] = '<div class="text-black"><h4><%= link_to store.name, store_path(store) %></h4><h5><%= store.address %></h5></div>'
-    		infoWindow[<%= i %>] = new google.maps.InfoWindow({
-    			content: contentString[<%= i %>]
-    		});
-    		google.maps.event.addListener(markers[<%= i %>], 'click', function() {
-    			for (x = 0; x < markers.length; x++) {
-    				infoWindow[x].close()
-    			}
-    			infoWindow[<%= i %>].open(map, markers[<%= i %>]);
-    		});
-			<% end %>
-		}
-	  google.maps.event.addDomListener(window, 'load', initialize);
-	  
-	</script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script>
+    function initialize() {
+      var mapOptions = {
+        zoom: 13,
+        center: new google.maps.LatLng(41.82, -87.63)
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      var markers = []
+      var contentString = []
+      var infoWindow = []
+      <% @stores.each_with_index do |store, i| %>
+      	var myLatlng = new google.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>);
+        markers[<%= i %>] = (new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Hello World'
+        }));
+        contentString[<%= i %>] = '<div class="text-black"><h4><%= link_to store.name, store_path(store) %></h4><h5><%= store.address %></h5></div>'
+        infoWindow[<%= i %>] = new google.maps.InfoWindow({
+          content: contentString[<%= i %>]
+        });
+        google.maps.event.addListener(markers[<%= i %>], 'click', function() {
+          for (x = 0; x < markers.length; x++) {
+            infoWindow[x].close()
+          }
+          infoWindow[<%= i %>].open(map, markers[<%= i %>]);
+        });
+      <% end %>
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    
+  </script>
 </div>
