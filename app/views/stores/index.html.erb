@@ -16,7 +16,6 @@
   <% end %>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script>
   function initialize() {
     var mapOptions = {
@@ -28,7 +27,7 @@
     var contentString = []
     var infoWindow = []
     <% @stores.each_with_index do |store, i| %>
-    	var myLatlng = new google.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>);
+      var myLatlng = new google.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>);
       markers[<%= i %>] = (new google.maps.Marker({
         position: myLatlng,
         map: map,
