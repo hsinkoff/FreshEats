@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<%# REMOVE BEFORE SITE IS IN USE %>
+	<div class="text-center text-white">
+		<h1><%= "This site is in test mode.  Current information is for test puposes only!" %></h1>
+	</div>
+
 	<% if notice.present? %>
 		<p class="alert alert-info"><%= notice %></p>
 	<% end %>

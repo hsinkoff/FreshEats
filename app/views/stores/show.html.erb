@@ -5,65 +5,66 @@
 
 <div class="container-fluid">
   <div id="map-canvas"></div>
-    <div class= "text-center text-white">
+</div>
+<div class= "text-center text-white">
+  <br/>
+  <br/>
+  <h2><%= @store.name %></h2>
+  <h4><%= @store.address %></h4>
+  <br/>
+  <h4>
+    <%= "Last Tagged Fruits and Vegetables" %><br/><br/>
+    <% if @store.apples == true %>
+      <%= "Apples" %>
       <br/>
+    <% end %>
+    <% if @store.oranges == true %>
+      <%= "Oranges" %>
       <br/>
-      <h2><%= @store.name %></h2>
-      <h4><%= @store.address %></h4>
+    <% end %>
+    <% if @store.bananas == true %>
+      <%= "Bananas" %>
       <br/>
-      <h4>
-        <%= "Last Tagged Fruits and Vegetables" %><br/><br/>
-        <% if @store.apples == true %>
-          <%= "Apples" %>
-          <br/>
-        <% end %>
-        <% if @store.oranges == true %>
-          <%= "Oranges" %>
-          <br/>
-        <% end %>
-        <% if @store.bananas == true %>
-          <%= "Bananas" %>
-          <br/>
-        <% end %>
-        <% if @store.grapes == true %>
-          <%= "Grapes" %>
-          <br/>
-        <% end %>
-        <% if @store.other_fruits == true %>
-          <%= "Other Fruit" %>
-          <br/>
-        <% end %>
-        <% if @store.lettuce == true %>
-          <%= "Lettuce" %>
-          <br/>
-        <% end %>
-        <% if @store.carrots == true %>
-          <%= "Carrots" %>
-          <br/>
-        <% end %>
-        <% if @store.onions == true %>
-          <%= "Onions" %>
-          <br/>
-        <% end %>
-        <% if @store.potatoes == true %>
-          <%= "Potatoes" %>
-          <br/>
-        <% end %>
-        <% if @store.other_vegetables == true %>
-          <%= "Other Vegetables" %>
-          <br/>
-        <% end %>
-        <% if @store.no_fruits == true && @store.no_vegetables == true %>
-          <%= "None" %>
-        <% elsif @store.apples == false && @store.oranges == false && @store.bananas == false && @store.grapes == false && @store.other_fruits == false && @store.lettuce == false && @store.carrots == false && @store.onions == false && @store.potatoes == false && @store.other_vegetables == false %>
-          <%= "None" %>
-        <% end %>
-      </h4>
+    <% end %>
+    <% if @store.grapes == true %>
+      <%= "Grapes" %>
       <br/>
+    <% end %>
+    <% if @store.other_fruits == true %>
+      <%= "Other Fruit" %>
       <br/>
-      <h4><%= link_to 'Update Available Fruits and Vegetables', edit_store_path(@store), :class => 'heading' %></h4>
-    </div>
-    <div class="box">
+    <% end %>
+    <% if @store.lettuce == true %>
+      <%= "Lettuce" %>
+      <br/>
+    <% end %>
+    <% if @store.carrots == true %>
+      <%= "Carrots" %>
+      <br/>
+    <% end %>
+    <% if @store.onions == true %>
+      <%= "Onions" %>
+      <br/>
+    <% end %>
+    <% if @store.potatoes == true %>
+      <%= "Potatoes" %>
+      <br/>
+    <% end %>
+    <% if @store.other_vegetables == true %>
+      <%= "Other Vegetables" %>
+      <br/>
+    <% end %>
+    <% if @store.no_fruits == true && @store.no_vegetables == true %>
+      <%= "None" %>
+    <% elsif @store.apples == false && @store.oranges == false && @store.bananas == false && @store.grapes == false && @store.other_fruits == false && @store.lettuce == false && @store.carrots == false && @store.onions == false && @store.potatoes == false && @store.other_vegetables == false %>
+      <%= "None" %>
+    <% end %>
+  </h4>
+  <br/>
+  <br/>
+  <h4><%= link_to 'Update Available Fruits and Vegetables', edit_store_path(@store), :class => 'heading' %></h4>
+</div>
+
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
       <script>
         function initialize() {
@@ -84,6 +85,6 @@
         google.maps.event.addDomListener(window, 'load', initialize);
 
       </script>
-    </div>
-  </div>
+
+
 </div>
