@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="container-fluid">
-  <div id="map-canvas"></div>
+  <div id="show-map"></div>
 </div>
 <div class= "text-center text-white">
   <br/>
@@ -71,7 +71,7 @@
       zoom: 15,
       center: myLatlng
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('show-map'), mapOptions);
 
     var marker = new google.maps.Marker({
       position: myLatlng,
